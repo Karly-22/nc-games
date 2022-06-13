@@ -1,7 +1,8 @@
 import "./App.css";
-import { Routes, ROute } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import ReviewsList from "./components/ReviewsList";
 
 function App() {
   return (
