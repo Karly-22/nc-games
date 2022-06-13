@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ReviewCard from './ReviewCard';
 
 function ReviewsList() {
     const [reviews, setReviews] = useState([{
@@ -10,16 +11,13 @@ function ReviewsList() {
         "created_at": "2021-02-05T11:27:26.563Z",
         "votes": 3,
         "comment_count": 0
-      }])
+      }]);
 
   return (
     <ul>
         {reviews.map((review) => {
-            console.log(review);
             return (
-                <li key={review.review_id}>
-                    <h3>{review.title}</h3>
-                </li>
+                <ReviewCard key={review.review_id} review={review} />
             )
         })}
     </ul>
