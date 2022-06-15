@@ -15,17 +15,19 @@ function Comments({ review_id }) {
   return (
     <section>
       <h4>Comments:</h4>
-      <AddComment setComments={setComments} review_id={review_id} />
-      <ul className="comment-list">
-        {comments.map((reviewComments) => {
-          return (
-            <CommentsCard
-              key={reviewComments.comment_id}
-              reviewComments={reviewComments}
-            />
-          );
-        })}
-      </ul>
+      <fieldset>
+        <AddComment setComments={setComments} review_id={review_id} />
+        <ul className="comment-list">
+          {comments.map((reviewComments) => {
+            return (
+              <CommentsCard
+                key={reviewComments.comment_id}
+                reviewComments={reviewComments}
+              />
+            );
+          })}
+        </ul>
+      </fieldset>
     </section>
   );
 }

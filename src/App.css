@@ -71,11 +71,36 @@ header {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+/* REVIEW PAGE STYLING */
+
+.review-page {
+  border: solid 2px red;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.review-page h3 {
+  font-size: 30px;
+  border: solid 2px green;
+}
+
+.review-body {
+  border: solid 2px red;
+  display: flex;
+  text-align: left;
+  margin-top: 20px;
+}
 
 .review-img {
-  max-width: 80%;
   border-radius: 10px;
 }
+
+/* CATEGORY PAGE STYLING */
 
 .category-card {
   display: flex;
@@ -90,6 +115,31 @@ header {
 .category-link {
   text-decoration: none;
   color: black
+}
+
+.spinner {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  padding-top: 5em;
+  height: 70vh;
+  /* background: url("./images/cream_dust.png") repeat 0 0; */
+}
+
+.spinner::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border: 10px solid #dddddd;
+  border-top-color: #007f95;
+  border-radius: 50%;
+  animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @media only screen and (min-width: 600px) {

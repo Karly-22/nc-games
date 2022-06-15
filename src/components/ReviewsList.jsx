@@ -15,7 +15,7 @@ function ReviewsList() {
     });
   }, [userSelection]);
 
-  if (isLoading) return <p>... loading</p>;
+  if (isLoading) return <div className="spinner"></div>;
   return (
     <main>
         <CatDropdown setUserSelection={setUserSelection}/>
