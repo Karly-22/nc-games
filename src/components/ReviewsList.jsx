@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { fetchReviews } from "../utils/api";
 import ReviewCard from "./ReviewCard";
 import CatDropdown from "./CatDropdown";
-import { useSearchParams } from "react-router-dom"
 
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
@@ -20,7 +19,7 @@ function ReviewsList() {
   return (
     <main>
         <CatDropdown setUserSelection={setUserSelection}/>
-      <ul>
+      <ul className="review-list">
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;
         })}
