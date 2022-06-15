@@ -31,3 +31,9 @@ export const patchLikes = (review_id, inc_votes) => {
     return data.review;
   });
 };
+
+export const fetchComments = (review_id) => {
+  return gamesAPI.get(`/reviews/${review_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};

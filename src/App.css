@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400&family=Grape+Nuts&family=Montserrat:wght@200&display=swap");
+
 .App {
   text-align: center;
 }
@@ -9,14 +11,10 @@
   padding: 0px;
 }
 
-img {
-  max-width:80%;
-  border-radius: 10px;
-}
 
 body {
   background-color: #eaeff1;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 nav {
@@ -40,12 +38,22 @@ header {
 .review-card{
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   align-items: center;
   margin:10px;
   background-color: rgb(255, 255, 255);
-  border: 1px solid grey;
   border-radius: 12px;
+  padding-bottom: 20px;
+}
+
+.review-details {
+  display: flex;
+  
+}
+
+.review-details p {
+  display: flex;
+  margin: 15px;
+  text-align: center;
 }
 
 .img-list {
@@ -53,6 +61,12 @@ header {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
+.review-img {
+  max-width:80%;
+  border-radius: 10px;
+}
+
 
 @media only screen and (min-width: 600px) {
   .App {
