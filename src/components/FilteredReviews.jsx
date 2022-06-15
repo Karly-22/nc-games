@@ -1,25 +1,23 @@
 import { useState, useEffect } from "react";
 import { fetchReviews } from "../utils/api";
 import ReviewCard from "./ReviewCard";
-import CatDropdown from "./CatDropdown";
-import { useSearchParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [userSelection, setUserSelection] = useState("");
-  
+  const { category } = useParams();
+
   useEffect(() => {
-    fetchReviews(userSelection).then((reviewsFromAPI) => {
+    fetchReviews(category).then((reviewsFromAPI) => {
       setReviews(reviewsFromAPI);
       setIsLoading(false);
     });
-  }, [userSelection]);
+  }, [category]);
 
   if (isLoading) return <p>... loading</p>;
   return (
     <main>
-        <CatDropdown setUserSelection={setUserSelection}/>
       <ul>
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;

@@ -6,6 +6,7 @@ function ReviewCard({ review }) {
       <img src={review.review_img_url} alt={review.title} />
       <h4>Likes: {review.votes}</h4>
       <h4>Comments: {review.comment_count}</h4>
+      <p>{review.category}</p>
     </li>
   );
 }

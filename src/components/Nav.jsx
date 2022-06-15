@@ -4,6 +4,7 @@ function Nav() {
   return (
     <nav>
       <Link to="/reviews">Reviews</Link>
+      <Link to="/categories">Categories</Link>
     </nav>
   );
 }
