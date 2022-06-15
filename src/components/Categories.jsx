@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchCategories } from "../utils/api"
+import { Link } from "react-router-dom";
+import { fetchCategories } from "../utils/api";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -14,8 +15,10 @@ function Categories() {
     <ul>
       {categories.map((category) => {
         return (
-          <li>
-            <h3>{category.slug}</h3>
+          <li key={category.slug} value={category.slug}>
+            <Link to={`/reviews/${category.slug}`}>
+              <h3>{category.slug}</h3>
+            </Link>
             <p>{category.description}</p>
           </li>
         );

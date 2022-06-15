@@ -18,7 +18,7 @@ function CatDropdown({ setUserSelection }) {
     <form>
       <label>
         <select onChange={handleChange}>
-          <option value="All">All</option>
+          <option value="">All</option>
           {categories.map((category) => {
             return (
               <option key={category.slug} value={category.slug}>
