@@ -5,16 +5,23 @@ const gamesAPI = axios.create({
 });
 
 export const fetchReviews = (category) => {
-  return gamesAPI.get("/reviews", {
-    params: { category } 
-  }).then(({ data }) => {
-    return data.reviews;
-  });
+  return gamesAPI
+    .get("/reviews", {
+      params: { category },
+    })
+    .then(({ data }) => {
+      return data.reviews;
+    });
 };
 
 export const fetchCategories = () => {
-    return gamesAPI.get("/categories").then(({ data }) => {
-      return data.categories;
-    });
-  };
+  return gamesAPI.get("/categories").then(({ data }) => {
+    return data.categories;
+  });
+};
 
+export const fetchReviewsById = (review_id) => {
+  return gamesAPI.get(`/reviews/${review_id}`).then(({ data }) => {
+    return data.review;
+  });
+};
