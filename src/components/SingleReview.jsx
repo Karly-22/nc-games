@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchReviewsById } from "../utils/api";
+import Likes from "./Likes";
 
 function SingleReview() {
   const [review, setReview] = useState({});
@@ -20,9 +21,9 @@ function SingleReview() {
       <h3>{review.title}</h3>
       <h4>{review.owner}</h4>
       <img src={review.review_img_url} alt={review.title} />
-      <h4>Likes: {review.votes}</h4>
+      <Likes review_id={review_id} votes={review.votes}/>
       <h4>Comments: {review.comment_count}</h4>
-      <p>{review.description}</p>
+      <p>{review.review_body}</p>
     </li>
   );
 }

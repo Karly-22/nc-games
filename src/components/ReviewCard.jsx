@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ReviewCard({ review }) {
   return (
     <li className="review-card">
-      <img src={review.review_img_url} alt={review.title} />
+      <img className="img-list" src={review.review_img_url} alt={review.title} />
       <h3>{review.title}</h3>
       <h4>Written by {review.owner}</h4>
       <Link to={`/reviews/${review.review_id}`}>Read Review</Link>
