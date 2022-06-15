@@ -19,9 +19,9 @@ function SingleReview() {
   if (isLoading) return <p>... loading</p>;
   return (
     <li className="review-page">
+      <img className="review-img" src={review.review_img_url} alt={review.title} />
       <h3>{review.title}</h3>
       <h4>{review.owner}</h4>
-      <img src={review.review_img_url} alt={review.title} />
       <Likes review_id={review_id} votes={review.votes}/>
       <h4>Comments: {review.comment_count}</h4>
       <p>{review.review_body}</p>
