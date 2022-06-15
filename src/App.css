@@ -10,10 +10,8 @@
 }
 
 img {
-  max-width:100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-
+  max-width:80%;
+  border-radius: 10px;
 }
 
 body {
@@ -48,6 +46,12 @@ header {
   background-color: rgb(255, 255, 255);
   border: 1px solid grey;
   border-radius: 12px;
+}
+
+.img-list {
+  max-width:100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 @media only screen and (min-width: 600px) {
