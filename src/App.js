@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import ReviewsList from "./components/ReviewsList";
 import Categories from "./components/Categories";
 import FilteredReviews from "./components/FilteredReviews"
+import SingleReview from "./components/SingleReview";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/reviews" element={<ReviewsList />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/reviews/:category" element={<FilteredReviews />} />
+        <Route path="/categories/:category" element={<FilteredReviews />} />
+        <Route path="/reviews/:review_id" element={<SingleReview />} />
       </Routes>
     </div>
   );

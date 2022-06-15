@@ -17,7 +17,7 @@ function ReviewsList() {
 
   if (isLoading) return <p>... loading</p>;
   return (
-    <main>
+    <main className="review-list">
       <ul>
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;
