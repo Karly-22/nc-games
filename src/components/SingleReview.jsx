@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchReviewsById } from "../utils/api";
 import Likes from "./Likes";
+import Comments from "./Comments";
 
 function SingleReview() {
   const [review, setReview] = useState({});
@@ -17,13 +18,14 @@ function SingleReview() {
 
   if (isLoading) return <p>... loading</p>;
   return (
-    <li>
+    <li className="review-page">
       <h3>{review.title}</h3>
       <h4>{review.owner}</h4>
       <img src={review.review_img_url} alt={review.title} />
       <Likes review_id={review_id} votes={review.votes}/>
       <h4>Comments: {review.comment_count}</h4>
       <p>{review.review_body}</p>
+      <Comments review_id={review_id}/>
     </li>
   );
 }
