@@ -4,13 +4,12 @@ import {fixDate} from "../utils/fixDate"
 function ReviewCard({ review }) {
   return (
     <li className="review-card">
-      <Link to={`/reviews/${review.review_id}`}>
+      <Link to={`/reviews/${review.review_id}`} className="review-link">
       <img
         className="img-list"
         src={review.review_img_url}
         alt={review.title}
       />
-        {/* <Link to={`/reviews/${review.review_id}`}>Read Review</Link> */}
       <article className="review-details">
         <p>{review.owner}</p>
         <img></img>

@@ -15,15 +15,19 @@ function Categories() {
 
   if (isLoading) return <p>... loading</p>;
   return (
-    <ul>
+    <ul className="category-list">
       {categories.map((category) => {
         return (
-          <li key={category.slug} value={category.slug}>
-            <Link to={`/categories/${category.slug}`}>
+          <Link to={`/categories/${category.slug}`} className="category-link">
+            <li
+              key={category.slug}
+              value={category.slug}
+              className="category-card"
+            >
               <h3>{category.slug}</h3>
-            </Link>
-            <p>{category.description}</p>
-          </li>
+              <p>{category.description}</p>
+            </li>
+          </Link>
         );
       })}
     </ul>

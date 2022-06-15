@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchComments } from "../utils/api";
 import CommentsCard from "./CommentsCard";
+import AddComment from "./AddComment";
 
 function Comments({ review_id }) {
   const [comments, setComments] = useState([]);
@@ -9,11 +10,12 @@ function Comments({ review_id }) {
     fetchComments(review_id).then((filteredComments) => {
       setComments(filteredComments);
     });
-  }, []);
+  }, [comments, review_id]);
 
   return (
     <section>
-        <h4>Comments:</h4>
+      <h4>Comments:</h4>
+      <AddComment setComments={setComments} review_id={review_id} />
       <ul className="comment-list">
         {comments.map((reviewComments) => {
           return (
