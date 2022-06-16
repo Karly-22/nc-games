@@ -1,5 +1,3 @@
-// NOT CURRENTLY USED
-
 import { useState, useEffect } from "react";
 import { fetchReviews } from "../utils/api";
 import ReviewCard from "./ReviewCard";
