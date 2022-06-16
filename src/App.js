@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import ReviewsList from "./components/ReviewsList";
 import Categories from "./components/Categories";
-import FilteredReviews from "./components/FilteredReviews";
 import SingleReview from "./components/SingleReview";
 import Home from "./components/Home";
 

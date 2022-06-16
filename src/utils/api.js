@@ -4,10 +4,10 @@ const gamesAPI = axios.create({
   baseURL: "https://karlys-games-app.herokuapp.com/api",
 });
 
-export const fetchReviews = (category) => {
+export const fetchReviews = (category, sort_by, order_by) => {
   return gamesAPI
     .get("/reviews", {
-      params: { category },
+      params: { category, sort_by, order_by },
     })
     .then(({ data }) => {
       return data.reviews;
