@@ -2,9 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400&family=Grape+Nuts&family=Montserrat:wght@200&display=swap");
 
-.App {
-  text-align: center;
-}
 
 * {
   margin: 0px;
@@ -18,6 +15,7 @@ body {
 
 nav {
   background-color: #114b5f;
+  text-align: center;
 }
 
 .nav-bar a {
@@ -31,10 +29,13 @@ nav {
 
 header {
   background-color: #114b5f;
+  text-align: center;
   color: white;
   padding: 20px;
   padding-top: 50px;
 }
+
+/*REVIEW CARDS*/
 
 .review-list {
   list-style: none;
@@ -43,37 +44,44 @@ header {
 .review-card {
   display: flex;
   flex-direction:column;
-  margin: 15px;
+  margin: 1rem;
+  margin-bottom: 1.5rem;
   background-color: rgb(255, 255, 255);
-  border-radius: 12px;
-  border: solid 2px blue;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.344);
 }
 
 .review-link {
   text-decoration: none;
   color: black;
-  border: solid 2px red;
-  padding-bottom: 20px;
+}
+
+.review-link h3 {
+  display: flex;
+  /* justify-content: center; */
+  margin: 1.5rem;
+  /* border: solid 2px green; */
 }
 
 .review-details {
   display: flex;
-  align-items: stretch;
-  border: solid 2px green;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  /* border: solid 2px green; */
 }
 
 .review-details p {
-  align-items: center;
-  display: flex;
-  margin: 15px;
-  border: solid 2px blue;
+  font-size: 0.7rem;
+  margin-inline: 1.5rem;
+  margin-top: 0.5rem;  
 }
 
 .img-list {
   max-width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
+
 /* REVIEW PAGE STYLING */
 
 .review-page {
@@ -81,10 +89,8 @@ header {
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  margin: 1.5rem;
+  margin-top: 2rem;
 }
 
 .review-page h3 {
@@ -93,10 +99,10 @@ header {
 }
 
 .review-body {
-  border: solid 2px red;
+  border: solid 2px rgb(13, 0, 255);
   display: flex;
   text-align: left;
-  margin-top: 20px;
+  margin-block: 1rem;
 }
 
 .review-img {
@@ -107,18 +113,26 @@ header {
 
 .category-card {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
-  margin: 10px;
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
   background-color: rgb(255, 255, 255);
-  border-radius: 12px;
-  padding: 20px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.344);
+}
+
+.category-card, h3 {
+  margin-bottom: 1rem;
 }
 
 .category-link {
   text-decoration: none;
   color: black
 }
+
+/* SPINNER */
 
 .spinner {
   display: flex;
@@ -138,6 +152,9 @@ header {
   border-radius: 50%;
   animation: spinner 1s ease infinite;
 }
+
+
+
 
 @keyframes spinner {
   to {
