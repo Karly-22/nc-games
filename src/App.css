@@ -11,70 +11,147 @@
   padding: 0px;
 }
 
-
 body {
   background-color: #eaeff1;
   font-family: "Montserrat", sans-serif;
 }
 
 nav {
+  background-color: #114b5f;
+}
+
+.nav-bar a {
   color: white;
+  display: inline-block;
+  padding: 10px;
+  margin:10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 header {
-  background-color: #114B5F;
+  background-color: #114b5f;
   color: white;
   padding: 20px;
+  padding-top: 50px;
 }
 
-.review-list{
+.review-list {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
 }
 
-.review-card{
+.review-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin:10px;
+  flex-direction:column;
+  margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 12px;
+  border: solid 2px blue;
+}
+
+.review-link {
+  text-decoration: none;
+  color: black;
+  border: solid 2px red;
   padding-bottom: 20px;
 }
 
 .review-details {
   display: flex;
-  
+  align-items: stretch;
+  border: solid 2px green;
 }
 
 .review-details p {
+  align-items: center;
   display: flex;
   margin: 15px;
-  text-align: center;
+  border: solid 2px blue;
 }
 
 .img-list {
-  max-width:100%;
+  max-width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+/* REVIEW PAGE STYLING */
+
+.review-page {
+  border: solid 2px red;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.review-page h3 {
+  font-size: 30px;
+  border: solid 2px green;
+}
+
+.review-body {
+  border: solid 2px red;
+  display: flex;
+  text-align: left;
+  margin-top: 20px;
+}
 
 .review-img {
-  max-width:80%;
   border-radius: 10px;
 }
 
+/* CATEGORY PAGE STYLING */
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.category-link {
+  text-decoration: none;
+  color: black
+}
+
+.spinner {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  padding-top: 5em;
+  height: 70vh;
+  /* background: url("./images/cream_dust.png") repeat 0 0; */
+}
+
+.spinner::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border: 10px solid #dddddd;
+  border-top-color: #007f95;
+  border-radius: 50%;
+  animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
 
 @media only screen and (min-width: 600px) {
   .App {
     grid-template-columns: 25% 75%;
     grid-template-rows: min-content auto;
     grid-template-areas:
-      'header header'
-      'nav main';
+      "header header"
+      "nav main";
   }
 
   header {
@@ -85,4 +162,3 @@ header {
     grid-area: nav;
   }
 }
-

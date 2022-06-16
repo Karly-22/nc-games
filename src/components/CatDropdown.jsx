@@ -1,3 +1,5 @@
+// NOT CURRENTLY USED
+
 import { useState, useEffect } from "react";
 import { fetchCategories } from "../utils/api";
 
@@ -8,7 +10,7 @@ function CatDropdown({ setUserSelection }) {
       fetchCategories().then((cat) => {
           setCategories(cat);
       })
-  }, [])
+  }, [categories])
 
   function handleChange(event) {
     setUserSelection(event.target.value)

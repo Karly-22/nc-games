@@ -31,7 +31,7 @@ function Likes({ review_id, votes }) {
           color: isActive ? "white" : "",
         }}
       >
-        Like
+        <span>Like</span>
       </button>
     </div>
   );
