@@ -24,7 +24,7 @@ function Categories() {
               value={category.slug}
               className="category-card"
             >
-              <h3>{category.slug}</h3>
+              <h3><strong>{category.slug}</strong></h3>
               <p>{category.description}</p>
             </li>
           </Link>
