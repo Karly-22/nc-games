@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { postComment } from "../utils/api";
- 
 
 function AddComment({ review_id, setComments }) {
   const [username, setUsername] = useState("");
@@ -15,13 +14,18 @@ function AddComment({ review_id, setComments }) {
   }
 
   function handleSubmit(event) {
-    alert("Message was posted");
     event.preventDefault();
-      postComment(review_id, username, body).then(() => {setComments()});
+    postComment(review_id, username, body).then((res) => {
+      console.log(res);
+      setComments((currentComments) => {
+        const copy = [res, ...currentComments];
+        return copy;
+      });
+    });
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         Username:
         <input
@@ -40,7 +44,9 @@ function AddComment({ review_id, setComments }) {
           onChange={handleChangeComments}
         ></input>
       </label>
-      <input type="submit" value="submit" onClick={handleSubmit}/>
+      <button type="submit" onSubmit={handleSubmit}>
+        Submit
+      </button>
     </form>
   );
 }

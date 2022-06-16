@@ -13,7 +13,7 @@ function Categories() {
     });
   }, []);
 
-  if (isLoading) return <p>... loading</p>;
+  if (isLoading) return <div className="spinner"></div>;
   return (
     <ul className="category-list">
       {categories.map((category) => {

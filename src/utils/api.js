@@ -47,6 +47,6 @@ export const postComment = (review_id, username, body) => {
       body: body
     })
     .then(({ data }) => {
-      return data.comments;
+      return data.comment;
     });
 };

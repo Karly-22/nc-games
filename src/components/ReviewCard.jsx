@@ -12,7 +12,6 @@ function ReviewCard({ review }) {
       />
       <article className="review-details">
         <p>{review.owner}</p>
-        <img></img>
         <p>{fixDate(review.created_at)}</p>
         <p>{review.votes} likes</p>
       </article>
