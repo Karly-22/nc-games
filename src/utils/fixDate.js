@@ -1,8 +1,7 @@
 export const fixDate = (dateString) => {
     const date = new Date(dateString);
-    const year = date.getUTCFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
+    const dateArray = date.toString().split(" ");
     
-    return `${day}-${month}-${year}`
+    return `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
 }
+
