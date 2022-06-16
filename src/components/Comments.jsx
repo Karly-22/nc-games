@@ -30,6 +30,8 @@ function Comments({ review_id }) {
               <CommentsCard
                 key={reviewComments.comment_id}
                 reviewComments={reviewComments}
+                setComments={setComments}
+                comments={comments}
               />
             );
           })}

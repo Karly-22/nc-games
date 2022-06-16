@@ -16,7 +16,6 @@ function AddComment({ review_id, setComments }) {
   function handleSubmit(event) {
     event.preventDefault();
     postComment(review_id, username, body).then((res) => {
-      console.log(res);
       setComments((currentComments) => {
         const copy = [res, ...currentComments];
         return copy;
