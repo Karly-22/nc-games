@@ -24,7 +24,6 @@ function ReviewsList() {
       })
       .catch((err) => {
         setError(true);
-        console.log(err.response);
         setErrorMsg(err.response.data.msg);
       });
   }, [category, sortBy, orderBy]);
