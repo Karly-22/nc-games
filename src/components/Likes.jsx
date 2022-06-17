@@ -22,7 +22,7 @@ function Likes({ review_id, votes }) {
   }
 
   return (
-    <div>
+    <section className="likes">
       <h4>{votes + likes} likes</h4>
       <button
         onClick={handleLike}
@@ -33,7 +33,7 @@ function Likes({ review_id, votes }) {
       >
         <span>{isActive ? "Liked!" : "Like"}</span>
       </button>
-    </div>
+    </section>
   );
 }
 

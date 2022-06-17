@@ -39,6 +39,11 @@ header {
 .tag-light, h2{
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+}
+
+form {
+  align-items: center;
 }
 
 /*REVIEW CARDS*/
@@ -111,31 +116,36 @@ header {
 .review-page_light h3 {
   font-size: 30px;
   text-align: center;
-  border: solid 2px green;
 }
 
 .review-body_light {
-  border: solid 2px rgb(13, 0, 255);
   display: flex;
   text-align: left;
   margin-block: 1rem;
 }
 
 .author-details {
-  border: solid 2px rgb(13, 0, 255);
   display: flex;
-  
+  margin-top: 1rem;
+}
+
+.author-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.author-img {
+  border-radius: 50%;
+  margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .review-img_light {
   border-radius: 2rem;
 }
 
-.author-img {
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-}
 
 /* COMMENTS */
 
@@ -206,10 +216,13 @@ header {
 }
 
 @media only screen and (min-width: 600px) {
-  .app__light {
+  .app-light {
     display: flex;
   }
 
+  .review-list-light {
+    display: block;
+  }
   
   .review-page_light {
     max-width: 60rem;

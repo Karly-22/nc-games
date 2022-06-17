@@ -43,17 +43,17 @@ function SingleReview() {
           alt="author"
           className="author-img"
         />
-        <p>{review.owner}</p>
-        <p>{fixDate(review.created_at)}</p>
+        <article className="author-name">
+          <p>
+            Reviewed by <strong>{review.owner}</strong>
+          </p>
+          <p>{fixDate(review.created_at)}</p>
+        </article>
       </span>
-      <span>
-        <h4>{review.designer}</h4>
-        <h4>{review.category}</h4>
-        <Likes review_id={review_id} votes={review.votes} />
-        <h4>{review.comment_count} comments</h4>
-      </span>
-      <p className={`review-body_${theme}`}>{review.review_body}</p>
 
+      <Likes review_id={review_id} votes={review.votes} />
+
+      <p className={`review-body_${theme}`}>{review.review_body}</p>
       <Comments review_id={review_id} />
     </li>
   );
