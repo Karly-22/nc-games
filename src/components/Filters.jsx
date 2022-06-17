@@ -17,7 +17,7 @@ function SortBy({ sortBy, setSortBy, orderBy, setOrderBy }) {
         <label htmlFor="sort-by">Sort by:</label>
         <select id="sort-by" value={sortBy} onChange={handleChange}>
           {queries.map((query) => {
-            return <option value={query}>{query}</option>;
+            return <option key={query} value={query}>{query}</option>;
           })}
         </select>
       </form>

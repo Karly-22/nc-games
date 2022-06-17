@@ -24,12 +24,14 @@ function Comments({ review_id }) {
           setComments={setComments}
           review_id={review_id}
         />
-        <ul className="comment-list">
+        <ul className="comment-list_light">
           {comments.map((reviewComments) => {
             return (
               <CommentsCard
                 key={reviewComments.comment_id}
                 reviewComments={reviewComments}
+                setComments={setComments}
+                comments={comments}
               />
             );
           })}
