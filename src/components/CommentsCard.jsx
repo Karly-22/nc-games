@@ -1,23 +1,43 @@
 import { fixDate } from "../utils/fixDate";
 import { deleteComment } from "../utils/api";
+import { useState } from "react";
 
-function CommentsCard({ reviewComments }) {
+function CommentsCard({ reviewComments, setComments }) {
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [err, setErr] = useState(false);
 
   function handleDelete(event) {
-    if (window.confirm('Are you sure you want to delete this comment?')) {
-    deleteComment(event.target.value).catch((err) => {
-      console.log(err, 'iamerr');
-    });
+    if (window.confirm("Are you sure you want to delete this comment?")) {
+      setErr(false);
+      setComments((currentComments) => {
+        return currentComments.filter((comment) => {
+          return comment.comment_id !== event.target.value;
+        });
+      });
+      setIsDeleting(true);
+      deleteComment(event.target.value).catch((err) => {
+        setIsDeleting(false);
+        setErr("Something went wrong! Please try again.");
+      });
     }
   }
 
   return (
     <li key={reviewComments.comment_id} className="comments-card">
-      <h4>{reviewComments.author}</h4>
-      <h4>Created: {fixDate(reviewComments.created_at)}</h4>
+      <p>
+        <strong>{reviewComments.author}</strong> on{" "}
+        <em>{fixDate(reviewComments.created_at)}</em>
+      </p>
       <p>{reviewComments.body}</p>
-      <p>{reviewComments.comment_id}</p>
-      <button value={reviewComments.comment_id} onClick={handleDelete}>Delete Comment</button>
+      <p>{isDeleting ? "Deleting..." : null}</p>
+      <p>{err ? err : null}</p>
+      <button
+        value={reviewComments.comment_id}
+        onClick={handleDelete}
+        disabled={isDeleting}
+      >
+        Delete Comment
+      </button>
     </li>
   );
 }

@@ -34,6 +34,7 @@ function AddComment({ review_id, setComments }) {
           onChange={handleChangeUsername}
         ></input>
       </label>
+      <br></br>
       <label>
         Write a comment:
         <input

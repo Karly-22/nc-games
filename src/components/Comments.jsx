@@ -24,7 +24,7 @@ function Comments({ review_id }) {
           setComments={setComments}
           review_id={review_id}
         />
-        <ul className="comment-list">
+        <ul className="comment-list_light">
           {comments.map((reviewComments) => {
             return (
               <CommentsCard
