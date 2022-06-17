@@ -7,8 +7,9 @@ import ReviewsList from "./components/ReviewsList";
 import Categories from "./components/Categories";
 import SingleReview from "./components/SingleReview";
 import Home from "./components/Home";
-import { ThemeContext } from "./contexts/Theme";
 import ToggleTheme from "./components/ToggleTheme";
+import ErrorPath from "./components/ErrorPath";
+import { ThemeContext } from "./contexts/Theme";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -25,6 +26,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:category" element={<ReviewsList />} />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
+          <Route path="*" element={<ErrorPath />} />
         </Routes>
       </div>
     </ThemeContext.Provider>

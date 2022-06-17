@@ -11,15 +11,23 @@ function SingleReview() {
   const { theme } = useContext(ThemeContext);
   const [review, setReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
   const { review_id } = useParams();
 
   useEffect(() => {
-    fetchReviewsById(review_id).then((singleReview) => {
-      setReview(singleReview);
-      setIsLoading(false);
-    });
+    fetchReviewsById(review_id)
+      .then((singleReview) => {
+        setReview(singleReview);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(true);
+        setErrorMsg(err.response.data.msg);
+      });
   }, [review_id]);
 
+  if (error) return <h3>{errorMsg}</h3>;
   if (isLoading) return <div className="spinner"></div>;
   return (
     <li className={`review-page_${theme}`}>
