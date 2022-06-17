@@ -24,20 +24,29 @@ function SingleReview() {
   return (
     <li className={`review-page_${theme}`}>
       <h3>{review.title}</h3>
-      <h4>{review.owner}</h4><h4>{fixDate(review.created_at)}</h4>
       <img
         className={`review-img_${theme}`}
         src={review.review_img_url}
         alt={review.title}
       />
-      <Likes review_id={review_id} votes={review.votes} />
-      <h4>Comments: {review.comment_count}</h4>
-      <h4>{review.category}</h4>
-      <h4>{review.designer}</h4>
+      <span className="author-details">
+        <img
+          src="https://www.primaryteaching.co.uk/prodimg/imgperrgb/PA177.png"
+          alt="author"
+          className="author-img"
+        />
+        <p>{review.owner}</p>
+        <p>{fixDate(review.created_at)}</p>
+      </span>
+      <span>
+        <h4>{review.designer}</h4>
+        <h4>{review.category}</h4>
+        <Likes review_id={review_id} votes={review.votes} />
+        <h4>{review.comment_count} comments</h4>
+      </span>
       <p className={`review-body_${theme}`}>{review.review_body}</p>
-      <section>
-        <Comments review_id={review_id} />
-      </section>
+
+      <Comments review_id={review_id} />
     </li>
   );
 }

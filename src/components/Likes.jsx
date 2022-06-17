@@ -23,7 +23,7 @@ function Likes({ review_id, votes }) {
 
   return (
     <div>
-      <h4>Likes: {votes + likes}</h4>
+      <h4>{votes + likes} likes</h4>
       <button
         onClick={handleLike}
         style={{
@@ -31,7 +31,7 @@ function Likes({ review_id, votes }) {
           color: isActive ? "white" : "",
         }}
       >
-        <span>Like</span>
+        <span>{isActive ? "Liked!" : "Like"}</span>
       </button>
     </div>
   );
