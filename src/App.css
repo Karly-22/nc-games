@@ -36,9 +36,9 @@ header {
 
 /*HOME*/
 
-.homepage-header {
+.tag-light, h2{
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 /*REVIEW CARDS*/

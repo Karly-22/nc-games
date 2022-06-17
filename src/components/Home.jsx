@@ -18,8 +18,8 @@ function Home() {
 
   if (isLoading) return <div className="spinner"></div>;
   return (
-    <section>
-      <h3 className="homepage-header">Top 3 highest voted games:</h3>
+    <section className={`homepage-${theme}`}>
+      <h2 className={`tag-${theme}`}>Top 3 highest voted games:</h2>
       <ul className={`review-list-${theme}`}>
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;
