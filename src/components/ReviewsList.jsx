@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { fetchReviews } from "../utils/api";
 import ReviewCard from "./ReviewCard";
 import Filters from "./Filters";
-import { useContext } from "react";
-import { ThemeContext } from "../contexts/Theme";
+// import { useContext } from "react";
+// import { ThemeContext } from "../contexts/Theme";
 
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
@@ -14,7 +14,7 @@ function ReviewsList() {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
   const { category } = useParams();
-  const theme = useContext(ThemeContext);
+  // const theme = useContext(ThemeContext);
 
   useEffect(() => {
     fetchReviews(category, sortBy, orderBy)
@@ -38,7 +38,7 @@ function ReviewsList() {
         orderBy={orderBy}
         setOrderBy={setOrderBy}
       />
-      <ul className={`review-list-${theme}`}>
+      <ul className={`review-list`}>
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;
         })}

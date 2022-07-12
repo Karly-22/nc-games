@@ -24,20 +24,23 @@ function CommentsCard({ reviewComments, setComments }) {
 
   return (
     <li key={reviewComments.comment_id} className="comments-card">
+      <hr></hr>
+      <span className="comment-area">
+        <span className="paragraph">
       <p>
         <strong>{reviewComments.author}</strong> on{" "}
         <em>{fixDate(reviewComments.created_at)}</em>
       </p>
       <p>{reviewComments.body}</p>
       <p>{isDeleting ? "Deleting..." : null}</p>
-      <p>{err ? err : null}</p>
+      <p>{err ? err : null}</p></span>
       <button
         value={reviewComments.comment_id}
         onClick={handleDelete}
         disabled={isDeleting}
       >
-        Delete Comment
-      </button>
+        Delete
+      </button></span>
     </li>
   );
 }

@@ -12,7 +12,7 @@ function SortBy({ sortBy, setSortBy, orderBy, setOrderBy }) {
   }
 
   return (
-    <section>
+    <section className="filters">
       <form>
         <label htmlFor="sort-by">Sort by:</label>
         <select id="sort-by" value={sortBy} onChange={handleChange}>
