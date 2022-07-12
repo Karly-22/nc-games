@@ -20,7 +20,7 @@ function Home() {
   return (
     <section className={`homepage-${theme}`}>
       <h2 className={`tag-${theme}`}>Top 3 highest voted games:</h2>
-      <ul className={`review-list-${theme}`}>
+      <ul className={`review-list`}>
         {reviews.map((review) => {
           return <ReviewCard key={review.review_id} review={review} />;
         }).slice(0, 3)}

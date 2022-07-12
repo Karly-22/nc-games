@@ -51,9 +51,9 @@ function SingleReview() {
         </article>
       </span>
 
-      <Likes review_id={review_id} votes={review.votes} />
 
       <p className={`review-body_${theme}`}>{review.review_body}</p>
+      <Likes review_id={review_id} votes={review.votes} />
       <Comments review_id={review_id} />
     </li>
   );

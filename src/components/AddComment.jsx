@@ -38,31 +38,34 @@ function AddComment({ review_id, setComments }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
+    <section className="form-section">
+      <form onSubmit={handleSubmit} className="comment-form">
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
           value={username}
           name="username"
           onChange={handleChangeUsername}
         ></input>
-      </label>
-      <br></br>
-      <label>
-        Write a comment:
+        <br></br>
+        <label htmlFor="new-comment">Write a comment:</label>
         <input
           type="text"
           value={body}
           name="new-comment"
           onChange={handleChangeComments}
         ></input>
-      </label>
-      <button type="submit" onSubmit={handleSubmit} disabled={isSubmitting}>
-        Submit
-      </button>
-      <p>{error ? messageToUser : isSubmitting ? "Submitted!" : null}</p>
-    </form>
+        <button
+          type="submit"
+          onSubmit={handleSubmit}
+          disabled={isSubmitting}
+          className="submit-btn"
+        >
+          Submit
+        </button>
+        <p>{error ? messageToUser : isSubmitting ? "Submitted!" : null}</p>
+      </form>
+    </section>
   );
 }
 

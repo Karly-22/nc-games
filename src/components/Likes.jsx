@@ -22,18 +22,18 @@ function Likes({ review_id, votes }) {
   }
 
   return (
-    <section className="likes">
+    <span className="likes">
       <h4>{votes + likes} likes</h4>
       <button
         onClick={handleLike}
-        style={{
-          backgroundColor: isActive ? "green" : "",
-          color: isActive ? "white" : "",
-        }}
+        // style={{
+        //   backgroundColor: isActive ? "green" : "",
+        //   color: isActive ? "white" : "",
+        // }}
       >
         <span>{isActive ? "Liked!" : "Like"}</span>
       </button>
-    </section>
+    </span>
   );
 }
 
