@@ -1,8 +1,7 @@
 import React from "react";
 
 function SortBy({ sortBy, setSortBy, orderBy, setOrderBy }) {
-  const queries = ["created_at", "title", "votes"];
-
+  
   function handleChange(event) {
     setSortBy(event.target.value);
   }
@@ -16,9 +15,9 @@ function SortBy({ sortBy, setSortBy, orderBy, setOrderBy }) {
       <form>
         <label htmlFor="sort-by">Sort by:</label>
         <select id="sort-by" value={sortBy} onChange={handleChange}>
-          {queries.map((query) => {
-            return <option key={query} value={query}>{query}</option>;
-          })}
+          <option value={"created_at"}>Created at</option>
+          <option value={"title"}>Title</option>
+          <option value={"votes"}>Votes</option>
         </select>
       </form>
       <br></br>
