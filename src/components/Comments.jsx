@@ -18,8 +18,8 @@ function Comments({ review_id }) {
     <>
     {isLoading ? 
     <section>
-      <h4>Comments:</h4>
       <fieldset>
+      <h4>Join the conversation...</h4>
         <AddComment
           setComments={setComments}
           review_id={review_id}

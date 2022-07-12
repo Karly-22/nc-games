@@ -61,7 +61,7 @@ function AddComment({ review_id, setComments }) {
           disabled={isSubmitting}
           className="submit-btn"
         >
-          Submit
+          Add comment
         </button>
         <p>{error ? messageToUser : isSubmitting ? "Submitted!" : null}</p>
       </form>
