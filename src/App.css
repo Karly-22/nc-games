@@ -42,25 +42,18 @@ header {
   margin-top: 1rem;
 }
 
-/* form {
-  align-items: center;
-} */
-
 /* REVIEWS PAGE */
 
 .filters {
-  /* border-style: solid; */
   margin: 1rem;
 }
 
 .filters form {
   display: flex;
   justify-content: center;
-  /* border-style: solid; */
 }
 
 .filters form label {
-  /* border-style: solid; */
   width: 6rem;
 }
 
@@ -75,8 +68,8 @@ select {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
 
 .review-card {
@@ -96,16 +89,12 @@ select {
 
 .review-link h3 {
   display: flex;
-  /* justify-content: center; */
   margin: 1.5rem;
-  /* border: solid 2px green; */
 }
 
 .review-details {
   display: flex;
-  /* justify-content: center; */
   flex-wrap: wrap;
-  /* border: solid 2px green; */
 }
 
 .review-details p {
@@ -118,9 +107,7 @@ select {
   width: 100%;
   min-height: 20rem;
   max-height: 20rem;
-  /* max-width: 22rem; */
   object-fit: cover;
-  /* object-position: 100% 0; */
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
@@ -207,25 +194,17 @@ fieldset {
   margin-inline: 1rem;
   border-style: none;
 }
+
 /* COMMENTS */
 
-.comment-list_light {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.comments-card {
-  display: flex;
-  flex-direction:column;
-  margin-top: 1rem;
-}
-
 .comment-form {
-  background-color: #89b7c6;
+  background-color: #bdc7ca;
   border-radius: 1rem;
   padding: 1rem;
+}
+
+fieldset h4 {
+  margin: 1rem;
 }
 
 label {
@@ -247,18 +226,34 @@ input {
   margin-bottom: 0.5rem;
 }
 
+.comment-list_light {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.comments-card {
+  display: flex;
+  flex-direction:column;
+  margin-top: 1rem;
+  /* border-style: solid; */
+}
+
 .comment-area {
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin-top: 1rem;
 }
 
 .paragraph {
-  width: 90%;
+  width: 85%;
 }
 
 .comment-area button {
   height: 2rem;
+  margin-left: 1rem;
 }
 
 /* CATEGORY PAGE STYLING */
@@ -292,7 +287,6 @@ input {
   justify-content: center;
   padding-top: 5em;
   height: 70vh;
-  /* background: url("./images/cream_dust.png") repeat 0 0; */
 }
 
 .spinner::after {
@@ -306,8 +300,6 @@ input {
 }
 
 
-
-
 @keyframes spinner {
   to {
     transform: rotate(1turn);
@@ -316,7 +308,8 @@ input {
 
 @media only screen and (min-width: 600px) {
   .review-list {
-    justify-content: center;
+    justify-content:center;
+    align-items: stretch;
     display: flex;
     flex-wrap: wrap;
   }
